@@ -1,0 +1,284 @@
+.home_wrapper {
+
+	.nav {
+		text-align: left;
+	}
+
+	.hero {
+		background: url('../img/hero.png');
+		background-size: cover;
+		width: 100%;
+
+		.ccm-image-slider-text {
+			color: $white;
+			display: flex;
+			margin-left: 10%;
+			bottom: 5%;
+			text-transform: none;
+			font-family: $base-font;
+			width: 100%;
+
+			@include flex-col-layout();
+
+			@media only screen and (max-width: $lg-breakpoint) {
+				margin-left: 2%;
+			}
+
+			h2 {
+				color: $white;
+				padding-top: 280px;
+				margin: 0 10px 0;
+				font-size: 2em;
+
+				@media only screen and (max-width: $xl-breakpoint) {
+					padding-top: 240px;
+				}
+				@media only screen and (max-width: $lg-breakpoint) {
+					padding-top: 160px;
+				}
+				@media only screen and (max-width: $md-breakpoint) {
+					font-size: 1.2em;
+					padding-top: 90px;
+				}
+			}
+
+			p {
+				padding-top: 275px;
+				margin: 0;
+				font-size: 1.7em;
+				font-weight: 100;
+
+				@media only screen and (max-width: $xl-breakpoint) {
+					padding-top: 240px;
+				}
+				@media only screen and (max-width: $lg-breakpoint) {
+					padding-top: 0;
+				}
+				@media only screen and (max-width: $md-breakpoint) {
+					font-size: 1.2em;
+				}	
+			}
+		}
+	}
+
+	.areas,
+	.testimonials {
+		color: $white;
+
+		.section {
+			background: url('../img/home/button.png');
+			margin: 0 0 8px 0;
+
+			h2 {
+				color: $white;
+				font-family: $accent-font;
+				font-size: 1.8em;
+				margin-top: 10px;
+				text-align: left;
+			}
+
+			p {
+				text-align: left;
+			}
+
+			>div {
+				align-items: center;
+				padding: 10px;
+				width: 50%;
+			}
+		}
+	}
+
+	.testimonials {
+		margin-top: 10px;
+
+		>a {
+			margin-top: 25px;
+			min-height: 270px;
+			position: relative;
+			width: 33%;
+
+			@media only screen and (max-width: $xl-breakpoint) {
+				min-height: 220px;
+			}
+			@media only screen and (max-width: $lg-breakpoint) {
+				max-width: 500px;
+			}
+
+			&:first-child {
+				background: url('../img/home/testimonial1.png');
+				background-position: center;
+				background-size: cover;
+			}
+			&:nth-child(2) {
+				background: url('../img/home/testimonial2.png');
+				background-position: center;
+				background-size: cover;
+			}
+			&:nth-child(3) {
+				background: url('../img/home/testimonial3.png');
+				background-position: center;
+				background-size: cover;
+			}
+
+			img {
+				position: absolute;
+				height: auto;
+				width: 100%;
+
+				@media only screen and (max-width: $lg-breakpoint) {
+
+					&:not(.play) {
+						height: 100%;
+						width: auto;
+					}
+				}	
+			}
+
+			&:hover {
+
+				.play {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.videos {
+
+		>a {
+			margin-top: 8px;
+			min-height: 300px;
+			overflow: hidden;
+			position: relative;
+
+			@media only screen and (max-width: $lg-breakpoint) {
+				margin-top: 25px;
+				max-width: 500px;
+			}
+
+			&:first-child {
+				background: url('../img/home/field.png');
+				background-position: center;
+				background-size: cover;
+				width: 59%;
+
+				@include mobile-full-width($lg-breakpoint);
+			}
+			&:nth-child(2) {
+				background: url('../img/home/jumper-video.png');
+				background-position: center;
+				background-size: cover;
+				width: 40%;
+
+				@include mobile-full-width($lg-breakpoint);
+			}
+
+			&:hover {
+
+				.play {
+					opacity: 1;
+				}
+			}
+		}
+
+		h3 {
+			background: $red;
+			bottom: 0;
+			color: $white;
+			font-size: 32px;
+			padding: 20px 30px 20px 100px;
+			position: absolute;
+			text-align: left;
+			width: 90%;
+
+			span {
+				font-size: 1.3em;
+				margin: 5px 5px 0;
+			}
+			.play {
+				left: 2%;
+				position: relative;
+				width: 20px !important;
+			}
+		}
+	}
+
+	.welcome-text {
+		padding-bottom: 50px;
+
+		h2 {
+			color: $blue;
+			font-family: $accent-font;
+			font-size: $h2-size;
+			text-align: center;
+		}
+	}
+
+	.member-benefits {
+		background: url('../img/home/bg1.png') no-repeat;
+		background-size: cover;
+		margin-top: 0px;
+		padding-bottom: 50px;
+
+		.grid {
+
+			>div {
+				flex-direction: column;
+				max-width: 300px;
+
+				@include mobile-full-width();
+
+				h3 {
+					margin-top: 0;
+					text-transform: uppercase;
+				}
+
+				img {
+					margin-top: -70px;
+					height: auto;
+					width: 110px;
+
+					@media only screen and (max-width: $lg-breakpoint) {
+						margin-top: 0;
+					}	
+				}
+			}
+		}
+	}
+
+	.news {
+		padding: 50px 0;
+
+		.grid {
+			margin-bottom: 40px;
+
+			h3 {
+
+			}
+			>div {
+				flex-direction: column;
+			}
+		}
+
+		.read-more {
+			color: $red;
+			font-weight: bold;
+			text-align: center;
+			font-family: $accent-font;
+			font-size: 1.3em;
+			text-decoration: none;
+			width: 100%;
+
+			@include translate-x-center();
+		}
+	}
+
+	.member-btn {
+		margin-top: -50px;
+	}
+
+	.horseman {
+		width: 100%;
+	}
+}

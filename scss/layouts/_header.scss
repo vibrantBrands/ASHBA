@@ -1,0 +1,442 @@
+// Header styles fof the Vibrant rebrand //
+
+.ashba-header {
+	background: url('../img/home/nav-bg.png') repeat;
+	width: 100%;
+	z-index: 10;
+
+	.navigation {
+		align-items: center;
+		font-weight: normal;
+		font-family: $base-font;
+		display: flex;
+		flex-direction: column;
+		color: $black;
+		font-size: 1em;
+		justify-content: space-between;
+		text-transform: uppercase;
+		top: 0;
+		width: 100%;
+		z-index: 3;
+
+		@media only screen and (max-width: $md-breakpoint) {
+			background: url('../img/home/nav-bg.png') repeat;
+			min-height: 100px;
+			padding: 0;
+		}
+
+		.button-wrapper {
+			
+			@media only screen and (max-width: $md-breakpoint) {
+				font-size: .8em;
+				margin-top: 50px;
+			}
+		}
+
+		.logo {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 163px;
+
+			@media only screen and (max-width: $md-breakpoint) {
+				margin-top: 10px;
+				position: relative;
+				width: 100px;
+			}	
+		}
+
+		>div {
+			display: flex;
+
+			@media only screen and (max-width: $md-breakpoint) {
+				margin: 0 10px;
+			}	
+
+		}
+
+		.topbar {
+			align-items: center;
+			background: $red;
+			color: $white;
+			display: flex;
+			font-family: $base-font;
+			font-size: 16px;
+			justify-content: flex-end;
+			width: 100%;
+
+			ul {
+				list-style-type: none;
+				display: flex;
+				margin: 0;
+				padding: 0;
+				justify-content: flex-end;
+
+				@media only screen and (max-width: $md-breakpoint) {
+					flex-wrap: wrap;
+					justify-content: center;
+					width: 100%;
+				}
+
+				li {
+					margin-bottom: 0;
+					padding: 10px 12px;
+
+					a {
+						color: $white;
+					}
+
+					&.social {
+						@media only screen and (max-width: $lg-breakpoint) {
+							display: none;
+						}
+					}
+
+					&.donate {
+						background: $dark-gray;
+						padding: 10px 18px;
+					}
+
+					&.members {
+						background: $white;
+						color: $red;
+						padding: 8px 18px;
+
+						a {
+							color: $red;
+						}
+
+						.fas {
+							color: $red;
+						}
+					}
+				}
+			}
+
+			.searchbox {
+				border-left: 1px solid $white;
+				border-right: 1px solid $white;
+			}
+
+			.fa {
+				font-size: 1.7em;
+			}
+		}
+
+		.nav-wrapper {
+			align-items: flex-end;
+			color: $white;
+			display: flex;
+			justify-content: flex-end;
+			width: 100%;
+
+			@media only screen and (max-width: $md-breakpoint) {
+				background: url('../img/home/nav-bg.png') repeat;
+			}
+		}
+
+	.toggle-wrapper {
+			display: none;
+			flex-direction: column;
+			width: 30px;
+			height: 26px;
+			position: absolute;
+			top: 60px;
+			right: 60px;
+			z-index: 5;
+
+			/*@media only screen and (min-width: $md-breakpoint) {
+				display: none;
+			}*/	
+
+			p {
+				color: $black;
+				font-size: 0.7em;
+				margin: 30px 0 0 -1px;
+			}
+		}
+
+	.menu-toggle {
+			cursor: pointer;		
+
+			.bg {
+				display: block;
+				width: 100%;
+				height: 30px;
+				position: absolute;	
+			}
+
+			.bar {
+				background: $black;
+				display: block;
+				height: 2px;
+				position: absolute;
+				width: 100%;
+				top: 10%;
+
+				&:nth-child(2){
+					top: 50%;
+				}
+				&:nth-child(3){
+					top: 90%;
+				}
+			}
+
+			&.active {
+
+				.bar {
+					//background: $white;
+					transition: $menu-transition;
+					
+					&:first-child {
+						transform: rotate(-45deg);
+						top: 50%;
+					}
+
+					&:nth-child(2) {
+						opacity: 0;
+					}
+
+					&:nth-child(3) {
+						transform: rotate(45deg);
+						top: 50%;
+					}
+				}
+			}
+
+			&.inactive {
+
+				.bar {
+					transition: $menu-transition;
+					
+					&:first-child {
+						transform: rotate(0);
+						top: 20%;
+					}
+
+					&:nth-child(2) {
+						opacity: 1;
+					}
+
+					&:nth-child(3) {
+						transform: rotate(0);
+						top: 80%;
+					}
+				}
+			}
+		}
+
+		.nav {
+            align-items: flex-end;
+            display: flex;
+            font-weight: 700;
+            height: 70px;
+            justify-content: flex-end;
+            padding: 0 20px 20px;
+            text-align: right;
+            z-index: 10;
+
+            @media screen and (max-width: $xl-breakpoint) {
+                justify-content: center;
+            }
+
+            @media screen and (max-width: $md-breakpoint) {
+                height: auto;
+                width: 100%;
+            }
+
+            &.active {
+            	display: block;
+            }
+
+            >.nav-item {
+                color: $white;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                margin: 0 3px 0;
+                padding: 0 10px;
+                text-align: left;
+                text-decoration: none;
+
+                &.dropdown {
+                	&:after {
+                		font-family: "Font Awesome 5 Free";
+                		content:"\f107";
+                		display: block;
+                		margin-left: 5px;
+                	}
+                }
+
+                a {
+                	cursor: pointer;
+                	color: $white;
+                	font-weight: 500;
+                	text-decoration: none;
+                }
+
+                >.submenu {
+                    max-height: 0;
+                    margin-top: -1px;
+                    overflow: hidden;
+                    padding: 0;
+                    position: absolute;
+                    top: 150px;
+                    transition: all .4s ease-out;
+                    z-index: 2;
+
+                    >.nav-item {
+                    	//background: $blue;
+						/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#36a6dc+0,36a6dc+47,36a6dc+47,3667b1+47,3667b1+100 */
+						background: $blue; /* Old browsers */
+                    	border-top: 0;
+                    	border: $white 1px solid;
+                    	padding: 10px;
+                    	position: relative;
+                    	transition: all .2s ease-out;
+
+                    	&:hover {
+                    		background: #edf6ff;
+
+                			a {
+                				color: $blue;
+                				display: block;
+                				height: 100%;
+                				width: 100%;
+                			}
+                		}
+                    }
+
+                    .submenu {
+                    	display: none;
+                    	margin-bottom: 0;
+                    	margin-top: 10px;
+
+                    	.nav-item {
+                    		color: white;
+                    		margin-bottom: 0;
+                    		padding: 5px 0 5px 20px;
+                    		border: 0;
+
+                    		&:hover {
+                    			background: $blue;
+                 				
+                 				a {
+                 					color: $blue;
+                 				}
+                    		}
+                    	}
+                    }
+
+                    @media screen and (max-width: $md-breakpoint) {
+						max-width: 60%;
+						right: 0;
+						top: 0;
+
+						 >.nav-item {
+						 	border-top: 1px solid white;
+						 	border-left: 1px solid white;
+						 	margin-top: 0;
+						 	//padding: 0;
+
+						 	&:last-child {
+						 		border-bottom: 1px solid white;
+						 	}
+							
+							a {
+								//padding: 0 10px;
+							}
+
+						 }
+
+						 .submenu {
+						 	display: none;
+						 }
+                    }
+                }
+
+                &:hover {
+                    
+                    .submenu {
+                        max-height: 800px;
+                    }
+                }
+            }
+        }
+	}
+}
+
+.menu-tray {
+	background: lightgray;
+	display: block;
+	margin: 0;
+	max-height: 0px;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	transition: all .5s linear;
+	width: 100%;
+
+	.submenu {
+		display: none;
+	}
+
+	&.open {
+		max-height: 1000px;
+		padding: 40px 0;
+	}
+
+	ul.subnav {
+		display: flex;
+		list-style-type: none;
+		justify-content: space-between;
+		width: 100%;
+
+		@include flex-col-layout();
+
+		ul {
+			list-style-type: none;
+		}
+
+			.header {
+				text-transform: uppercase;
+			}
+
+			li {
+				margin-bottom: 5px;
+				margin-right: 1%;
+
+				.header {
+					font-family: $base-font;
+					font-weight: bold;
+					color: $blue;
+				}
+
+				a {
+					color: $black;
+					font-size: 14px;
+
+					&:after {
+						background: $red;
+						content: '';
+						display: block;
+						height: 1px;
+						position: relative;
+						transition: .4s width ease-out;
+						width: 0;
+					}
+					&:hover {
+						color: $red;
+
+						&:after {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+
+		ul {
+			padding-left: 0px;
+		}
+}

@@ -1,0 +1,102 @@
+
+footer {
+	color: $white;
+	clear: both;
+	font-family: $base-font;
+	font-size: 14px;
+	text-align: left;
+
+	@media only screen and (max-width: $lg-breakpoint) {
+		font-size: 18px;
+	}
+
+	.row {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+
+		@include flex-col-layout();
+
+		>div {
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			min-height: 180px;
+			width: 16.666%;
+
+			@include mobile-full-width();
+
+			.logo {
+				max-width: 180px;
+			}
+
+			img {
+				width: 100%;
+
+				@media only screen and (max-width: $lg-breakpoint) {
+					margin-top: 50px;
+				}
+			}
+
+			&:nth-child(2) {
+				background: $blue;
+				flex-direction: column;
+				padding-left: 2%;
+
+				@media only screen and (max-width: $lg-breakpoint) {
+					padding-left: 0;
+				}
+			}
+
+			&:nth-child(3) {
+				background: $blue;
+				flex-direction: column;
+
+				@media only screen and (max-width: $lg-breakpoint) {
+					padding-bottom: 40px;
+				}
+			}
+
+			&:nth-child(4) {
+				background: $red;
+				color: $white;
+				font-size: 1.5em;
+				font-weight: 800;
+				text-align: center;
+				text-transform: uppercase;
+			}
+
+			&:nth-child(5) {
+				background: #fdfdfd;
+				width: 33.333%;
+
+				@include mobile-full-width();
+
+				@media only screen and (max-width: $xl-breakpoint) {
+					flex-direction: column;
+				}
+				@media only screen and (max-width: $lg-breakpoint) {
+					flex-direction: row;
+				}		
+			}
+		}
+
+		ul.social-icons {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			list-style-type: none;
+
+			li {
+				margin-bottom: 20px;
+				width: 33%;
+			}
+
+			.fab {
+				color: white;
+				font-size: 2em;
+			}
+		}
+	}
+}
